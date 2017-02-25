@@ -1,0 +1,25 @@
+{
+  "name": "hw-u03-d02-favorite_beers",
+  "version": "1.0.0",
+  "description": "a website where you can favorite beers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.generalassemb.ly:alessapm/hw-u03-d02-favorite_beers.git"
+  },
+  "author": "Alessa Messineo",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.16.1",
+    "ejs": "^2.5.6",
+    "express": "^4.14.1",
+    "express-session": "^1.15.1",
+    "method-override": "^2.3.7",
+    "morgan": "^1.8.1",
+    "pg-promise": "^5.5.8"
+  }
+}
