@@ -22,8 +22,8 @@ controller.create = (req, res) => {
 };
 
 controller.favorite = (req, res) => {
-  console.log('req.body.beers.id: ', req.body.beers.id);
-  console.log('req.session.user: ', req.session.user)
+  // console.log('req.body.beers.id: ', req.body.beers.id);
+  // console.log('req.session.user: ', req.session.user);
 
   Beer.favorite(req.body.beers.id, req.session.user)
   .then((data) => {
@@ -32,6 +32,14 @@ controller.favorite = (req, res) => {
   })
   .catch(err => console.log('error in favorites: ', err));
 };
+
+controller.removeFav = (req, res) => {
+  console.log('req.body.beers', req.body.beers)
+  Beer.removeFav(req.body.beers.id, req.session.user.id)
+  .then(() => res.redirect('/users/${req.session.user.id}/beers'))
+  .catch(err => console.log('error in remFav: ', err));
+};
+
 
 
 module.exports = controller;

@@ -25,6 +25,10 @@
     <p> <%= each.beer_type %></p>
     <img src="<%= each.beer_image %>" alt="Beer!">
   </div>
+  <form method="POST" action="/beers/fav?_method=DELETE">
+    <input type="hidden" name="beers[id]" value="<%= each.id %>">
+    <input type="submit" value="&#128148">
+  </form>
 <% }) %>
 
 
