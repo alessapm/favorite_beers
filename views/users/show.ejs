@@ -19,6 +19,14 @@
 
 <h1>Your Favorite Sudz: </h1>
 
+<% beers.forEach((each) => { %>
+ <div>
+    <h2> <%= each.beer_name %> </h2>
+    <p> <%= each.beer_type %></p>
+    <img src="<%= each.beer_image %>" alt="Beer!">
+  </div>
+<% }) %>
+
 
 
 </body>

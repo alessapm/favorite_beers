@@ -20,4 +20,8 @@ Beer.favorite = (id, user) => {
 }
 
 
+Beer.findFavsById = (user_id) => {
+  return db.manyOrNone(`SELECT beers.beer_name, beers.beer_type, beers.beer_image FROM beers INNER JOIN beers_users ON beers_users.beer_id = beers.id INNER JOIN users ON beers_users.user_id = users.id WHERE users.id = $1`, [user_id])
+}
+
 module.exports = Beer;

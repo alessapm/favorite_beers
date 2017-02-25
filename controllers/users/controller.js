@@ -18,13 +18,8 @@ controller.create = (req, res) => {
   User.create(req.body.user)
   .then((data) => {
 
-    const error = {};
 
-  if (req.query.error){
-    error.message = 'Hmm...there is no existing user with that email. Please create an account'
-  };
-
-    res.redirect('users/new', { message: error.message })
+    res.redirect('users/new')
   })
   .catch((err) => console.log('error: ', err))
 };
@@ -44,7 +39,12 @@ controller.login = (req, res) => {
 
 
 controller.show = (req, res) => {
-  res.render('users/show');
+  Beer.findFavsById(req.params.id)
+  .then((data) => {
+    res.render('users/show', { beers: data })
+  })
+  .catch(err => console.log('error in findFav: ', err));
+
 };
 
 

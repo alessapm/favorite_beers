@@ -27,7 +27,7 @@ controller.favorite = (req, res) => {
 
   Beer.favorite(req.body.beers.id, req.session.user)
   .then((data) => {
-    console.log('beer fav data: ', data)
+    // console.log('beer fav data: ', data)
     res.redirect(`/users/${req.session.user.id}/beers`)
   })
   .catch(err => console.log('error in favorites: ', err));
