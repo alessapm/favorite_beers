@@ -9,6 +9,15 @@ Beer.create = (beer) => {
     );
 }
 
+Beer.findAll = () => {
+  return db.manyOrNone(`SELECT * FROM beers`)
+}
+
+Beer.favorite = (id, user) => {
+  return db.none(`INSERT INTO beers_users (user_id, beer_id) VALUES ($1, $2)`,
+    [user.id, id]
+    );
+}
 
 
 module.exports = Beer;

@@ -12,6 +12,19 @@
   <header>
   <h1>Sudz</h1>
 
+  <% beers.forEach((each) => { %>
+  <div>
+    <h2> <%= each.beer_name %> </h2>
+    <p> <%= each.beer_type %></p>
+    <img src="<%= each.beer_image %>" alt="Beer!">
+    <p> posted on: <%= each.created_at %></p>
+  </div>
+  <form method="POST" action="/beers/fav">
+    <input type="hidden" name="beers[id]" value="<%= [each.id] %>">
+    <input type="submit" value="&#9829">
+  </form>
+<% }) %>
+
 
   <a href="/users/login">Login</a><br><br>
   <a href="/users/new">New to Sudz? Create an account!</a>
