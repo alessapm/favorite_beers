@@ -1,15 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-// const AuthService = require('../../services/auth');
-
 const controller = require('./controller');
+
+const AuthService = require('../../services/auth');
+
+
 
 router.get('/new', controller.new);
 
 router.get('/login', controller.login);
 
-router.get('/:id/beers', controller.show);
+router.get('/:id/beers', AuthService.restrict, controller.show);
 
 
 

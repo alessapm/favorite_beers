@@ -4,34 +4,38 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="">
+  <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+  <link rel="stylesheet" href="/css/show.css">
 </head>
 <body>
-<a href="/beers">Back to all beers</a>
-<h1>Add to Sudz:</h1>
+<header>
+  <% include ../partial-header.ejs %>
+</header>
+<main>
+  <h2>Add to Sudz:</h2>
 
-<form id="beer-form" method="POST" action="/beers">
-  <input type="text" name="beer[beer_name]" placeholder="Enter name of beer">
-  <input type="text" name="beer[beer_type]" placeholder="Enter type of beer">
-  <input type="text" name="beer[beer_image]" placeholder="Enter url for image (optional)">
-  <input type="submit" value="add">
-</form>
-
-<h1>Your Favorite Sudz: </h1>
-
-<% beers.forEach((each) => { %>
- <div>
-    <h2> <%= each.beer_name %> </h2>
-    <p> <%= each.beer_type %></p>
-    <img src="<%= each.beer_image %>" alt="Beer!">
-  </div>
-  <form method="POST" action="/beers/fav?_method=DELETE">
-    <input type="hidden" name="beers[id]" value="<%= each.id %>">
-    <input type="submit" value="&#128148">
+  <form id="beer-form" method="POST" action="/beers">
+    <input type="text" name="beer[beer_name]" placeholder="Enter name of beer">
+    <input type="text" name="beer[beer_type]" placeholder="Enter type of beer">
+    <input type="text" name="beer[beer_image]" placeholder="Enter url for image (optional)">
+    <input type="submit" value="add">
   </form>
-<% }) %>
 
+  <h2>Your Favorite Sudz: </h2>
 
+  <% beers.forEach((each) => { %>
+   <div class="beer-post">
+      <h2> <%= each.beer_name %> </h2>
+      <p> <%= each.beer_type %></p>
+      <img src="<%= each.beer_image %>" alt="Beer!">
+    </div>
+    <form method="POST" action="/beers/fav?_method=DELETE">
+      <input type="hidden" name="beers[id]" value="<%= each.id %>">
+      <input class="heart" type="submit" value="&#128148">
+    </form>
+  <% }) %>
+
+</main>
 
 </body>
 </html>

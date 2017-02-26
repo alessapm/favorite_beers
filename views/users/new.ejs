@@ -4,22 +4,29 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Create New User</title>
-  <link rel="stylesheet" href="">
+  <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+  <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
   <main>
-    <header>Sudz</header>
-    <h1>Create New User</h1>
-    <form method ="POST" action="/users">
-      <input type="text" name ="user[first_name]" placeholder="enter first name"><br>
-      <input type="text" name="user[username]" placeholder="enter username"><br>
-      <input type="email" name="user[email]" placeholder="enter email address"><br>
-      <input type="password" minlength="4" name="user[password]" placeholder="create password"><br>
-      <input type="submit" value="Create User">
+    <header>
+      <% include ../partial-header.ejs %>
+    </header>
 
-    </form>
+    <div id='input-area'>
+    <h2>Create New User</h2>
+      <form method ="POST" action="/users">
+        <input type="text" name ="user[first_name]" placeholder="enter first name"><br>
+        <input type="text" name="user[username]" placeholder="enter username"><br>
+        <input type="email" name="user[email]" placeholder="enter email address"><br>
+        <input type="password" minlength="4" name="user[password]" placeholder="create password"><br>
+        <input type="submit" value="Create User">
 
-    <a href = "/users/login">Already have an account? Login</a>
+      </form>
+      <a id="has-account" href = "/users/login">Already have an account? Login</a>
+
+    </div>
+
 
   </main>
 

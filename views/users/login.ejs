@@ -4,15 +4,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>User Login</title>
-  <link rel="stylesheet" href="">
+  <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+  <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-   <h1>User Login</h1>
-  <form method="POST" action="/users/login">
-    <input type="email" name="user[email]" placeholder="email"><br>
-    <input type="password" name="user[password]" placeholder="password"><br>
-    <input type="submit" value="Login">
-  </form>
+<header>
+  <% include ../partial-header.ejs %>
+</header>
+  <div id="input-area">
+    <h2>User Login</h2>
+    <form method="POST" action="/users/login">
+      <input type="email" name="user[email]" placeholder="email"><br>
+      <input type="password" name="user[password]" placeholder="password"><br>
+      <input type="submit" value="Login">
+    </form>
+  </div>
 
   <% if (message) { %>
     <p><%= message %></p>
