@@ -11,6 +11,6 @@ router.get('/', controller.index);
 router.post('/', controller.create);
 
 router.post('/fav', AuthService.restrict, controller.favorite);
-router.delete('/fav', controller.removeFav);
+router.delete('/fav/:id', controller.removeFav);
 
 module.exports = router;

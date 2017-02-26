@@ -34,9 +34,9 @@ controller.favorite = (req, res) => {
 };
 
 controller.removeFav = (req, res) => {
-  console.log('req.body.beers', req.body.beers)
-  Beer.removeFav(req.body.beers.id, req.session.user.id)
-  .then(() => res.redirect('/users/${req.session.user.id}/beers'))
+  // console.log('req.body.beers', req.body.beers)
+  Beer.removeFav(req.params.id, req.session.user.id)
+  .then(() => res.redirect(`/users/${req.session.user.id}/beers`))
   .catch(err => console.log('error in remFav: ', err));
 };
 

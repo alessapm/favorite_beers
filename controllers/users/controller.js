@@ -41,6 +41,7 @@ controller.login = (req, res) => {
 controller.show = (req, res) => {
   Beer.findFavsById(req.params.id)
   .then((data) => {
+    // console.log('------- controller.show data: ', data);
     res.render('users/show', { beers: data })
   })
   .catch(err => console.log('error in findFav: ', err));
