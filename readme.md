@@ -1,6 +1,6 @@
 # Favorite Beers!
 
-
+![alt-text](public/fav_beers.png)
 
 ## A Node.js CRUD app using postgreSQL, with User Auth and many-to-many relationships. Users can create accounts, log in to their account, add beers to the database, and then save favorite beers to their accounts, which will display on their personal dashboard.
 
